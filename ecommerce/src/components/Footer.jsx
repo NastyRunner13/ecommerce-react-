@@ -6,9 +6,15 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import { mobile } from "../Responsive";
 
 const Container = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  ${mobile({
+    flexDirection: "column",
+  })}
 `;
 
 const Left = styled.div`
@@ -19,6 +25,7 @@ const Left = styled.div`
 `;
 
 const Logo = styled.h1``;
+
 const Desc = styled.p`
   margin: 20px 0px;
 `;
@@ -35,11 +42,15 @@ const SocialIcon = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({
+    display: "none",
+  })}
 `;
 
 const Title = styled.h3`
@@ -62,6 +73,9 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({
+    padding: "20px 0",
+  })}
 `;
 
 const ContactItem = styled.div`

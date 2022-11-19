@@ -20,9 +20,8 @@ const Info = styled.div`
 `;
 
 const Container = styled.div`
-  flex: 1;
   margin: 5px;
-  min-width: 300px;
+  flex: 1 0 21%;
   height: 400px;
   display: flex;
   align-items: center;

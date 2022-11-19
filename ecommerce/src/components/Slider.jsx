@@ -3,6 +3,7 @@ import styled from "styled-components";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
 import { sliderItems } from "../data";
+import { mobile } from "../Responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -10,6 +11,9 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({
+    height: "30%",
+  })}
 `;
 
 const Wrapper = styled.div`
@@ -17,6 +21,9 @@ const Wrapper = styled.div`
   display: flex;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
+  ${mobile({
+    height: "30%",
+  })}
 `;
 
 const Arrow = styled.div`
@@ -44,6 +51,9 @@ const Slide = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #${(props) => props.bg};
+  ${mobile({
+    flexDirection: "column",
+  })}
 `;
 
 const ImgContainer = styled.div`
@@ -51,18 +61,35 @@ const ImgContainer = styled.div`
   flex: 1;
   justify-content: center;
   display: flex;
+  ${mobile({
+    height: "30vh",
+  })}
 `;
 
 const Image = styled.img`
-  height: 80%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 `;
+
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  ${mobile({
+    padding: "0",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+  })}
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+
+  ${mobile({
+    fontSize: "30px",
+  })}
 `;
 
 const Desc = styled.p`
@@ -70,6 +97,10 @@ const Desc = styled.p`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
+  ${mobile({
+    fontSize: "13px",
+    margin: "10px",
+  })}
 `;
 
 const Button = styled.button`
@@ -78,6 +109,10 @@ const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
   box-shadow: 3px 3px 3px black;
+  ${mobile({
+    padding: "5px",
+    fontSize: "12px",
+  })}
 `;
 
 export default function Slider() {
